@@ -1,15 +1,86 @@
 document.addEventListener('DOMContentLoaded', () => {
     /* GALLERY EXPANSION */
     const seeMoreBtn = document.getElementById('seeMoreGalleryBtn');
+    let galleryExpanded = false;
     if(seeMoreBtn) {
         seeMoreBtn.addEventListener('click', () => {
             const hiddenItems = document.querySelectorAll('.gallery-expandable');
-            hiddenItems.forEach(item => {
-                item.classList.remove('d-none');
-                item.classList.add('fade-in-up', 'active'); // Animate in
-            });
-            seeMoreBtn.style.display = 'none'; // Hide button after expand
+            if(!galleryExpanded) {
+                hiddenItems.forEach(item => {
+                    item.classList.remove('d-none');
+                    setTimeout(() => item.classList.add('fade-in-up', 'active'), 10);
+                });
+                seeMoreBtn.innerText = "See Less";
+                galleryExpanded = true;
+            } else {
+                hiddenItems.forEach(item => {
+                    item.classList.remove('active', 'fade-in-up');
+                    setTimeout(() => item.classList.add('d-none'), 400); // Wait for transition
+                });
+                seeMoreBtn.innerText = "See More";
+                galleryExpanded = false;
+                
+                const gallerySection = document.getElementById('gallery');
+                window.scrollTo({
+                    top: gallerySection.getBoundingClientRect().top + window.pageYOffset - 80,
+                    behavior: 'smooth'
+                });
+            }
         });
+    }
+
+    /* LOGIN MODAL LOGIC */
+    const loginModal = document.getElementById('login-modal');
+    const loginClose = document.getElementById('login-close');
+    const openLoginBtns = document.querySelectorAll('.open-login-btn');
+    const tabUser = document.getElementById('tab-user');
+    const tabAdmin = document.getElementById('tab-admin');
+    
+    if(loginModal) {
+        openLoginBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                loginModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        loginClose.addEventListener('click', () => {
+            loginModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        loginModal.addEventListener('click', (e) => {
+            if(e.target === loginModal) {
+                loginModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        const setLoginTab = (isActiveUser) => {
+            if (isActiveUser) {
+                tabUser.className = 'btn btn-primary btn-block tab-btn active';
+                tabUser.style.color = 'var(--color-dark)';
+                tabUser.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                
+                tabAdmin.className = 'btn btn-transparent btn-block tab-btn';
+                tabAdmin.style.color = '#555';
+                tabAdmin.style.boxShadow = 'none';
+            } else {
+                tabAdmin.className = 'btn btn-primary btn-block tab-btn active';
+                tabAdmin.style.color = 'var(--color-dark)';
+                tabAdmin.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                
+                tabUser.className = 'btn btn-transparent btn-block tab-btn';
+                tabUser.style.color = '#555';
+                tabUser.style.boxShadow = 'none';
+            }
+        };
+
+        if(tabUser && tabAdmin) {
+            tabUser.addEventListener('click', (e) => { e.preventDefault(); setLoginTab(true); });
+            tabAdmin.addEventListener('click', (e) => { e.preventDefault(); setLoginTab(false); });
+        }
     }
 
     /* HEADER SCROLL */

@@ -43,6 +43,7 @@
                 <a href="https://wa.me/1234567890" target="_blank" class="btn btn-whatsapp-header" aria-label="WhatsApp">
                     <i class="fa-brands fa-whatsapp"></i>
                 </a>
+                <button class="btn btn-secondary open-login-btn" style="padding: 10px 24px;">Login</button>
                 <a href="#contact" class="btn btn-black">Get in Touch</a>
             </div>
             
@@ -61,6 +62,7 @@
                 <li><a href="#why-us">Why Us</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#gallery">Gallery</a></li>
+                <li><button class="btn btn-secondary btn-block mt-2 open-login-btn">Login</button></li>
                 <li><a href="#contact" class="btn btn-black mt-2">Get in Touch</a></li>
             </ul>
         </div>
@@ -150,6 +152,22 @@
                         <p class="appointment-price">₹1</p>
                     </div>
                     <button class="btn btn-primary">Book a Spot</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Transformations -->
+    <section id="transformations" class="transformations-section section-padding bg-beige">
+        <div class="container text-center reveal-up">
+            <span class="section-subtitle">Real Results</span>
+            <h2>Real Transformations</h2>
+            <div class="transformations-grid mt-4">
+                <div class="transformation-card">
+                    <img src="assets/transformation1.png" alt="Before and After Transformation 1">
+                </div>
+                <div class="transformation-card">
+                    <img src="assets/transformation2.png" alt="Before and After Transformation 2">
                 </div>
             </div>
         </div>
@@ -284,17 +302,17 @@
             <span class="section-subtitle">Visuals</span>
             <h2>Gallery</h2>
             <div class="gallery-grid mt-4" id="gallery-grid-main">
-                <!-- 8 Initial Images -->
+                <!-- 4 Initial Images -->
                 <div class="gallery-item"><img src="assets/gallery1.png" alt="Gallery"></div>
                 <div class="gallery-item"><img src="assets/gallery2.png" alt="Gallery"></div>
                 <div class="gallery-item"><img src="assets/gallery3.png" alt="Gallery"></div>
                 <div class="gallery-item"><img src="assets/hero.png" alt="Gallery"></div>
-                <div class="gallery-item"><img src="assets/prenatal.png" alt="Gallery"></div>
-                <div class="gallery-item"><img src="assets/yin.png" alt="Gallery"></div>
-                <div class="gallery-item"><img src="assets/menstrual.png" alt="Gallery"></div>
-                <div class="gallery-item"><img src="assets/sciatica.png" alt="Gallery"></div>
-
-                <!-- 8 Hidden / Expandable Images -->
+                
+                <!-- 12 Hidden / Expandable Images -->
+                <div class="gallery-item d-none gallery-expandable"><img src="assets/prenatal.png" alt="Gallery"></div>
+                <div class="gallery-item d-none gallery-expandable"><img src="assets/yin.png" alt="Gallery"></div>
+                <div class="gallery-item d-none gallery-expandable"><img src="assets/menstrual.png" alt="Gallery"></div>
+                <div class="gallery-item d-none gallery-expandable"><img src="assets/sciatica.png" alt="Gallery"></div>
                 <div class="gallery-item d-none gallery-expandable"><img src="assets/diabetes.png" alt="Gallery"></div>
                 <div class="gallery-item d-none gallery-expandable"><img src="assets/knee.png" alt="Gallery"></div>
                 <div class="gallery-item d-none gallery-expandable"><img src="assets/obesity.png" alt="Gallery"></div>
@@ -406,6 +424,9 @@
                             <input type="email" placeholder="Email Address" required>
                         </div>
                         <div class="form-group">
+                            <input type="tel" placeholder="Phone Number (Optional)">
+                        </div>
+                        <div class="form-group">
                             <textarea placeholder="Message" rows="4" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-black btn-block">Send Message</button>
@@ -453,6 +474,32 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary btn-block" onclick="alert('Proceeding to payment gateway for ₹1')">Proceed to Payment (₹1)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 400px; padding: 10px;">
+            <button class="modal-close" aria-label="Close modal" id="login-close">&times;</button>
+            <div class="modal-header text-center" style="border-bottom: none; padding-bottom: 0;">
+                <h2 style="font-size: 1.8rem; margin-bottom: 5px;">Welcome</h2>
+                <p class="text-text-light" style="font-size: 0.9rem;">Login to your account to continue</p>
+            </div>
+            <div class="modal-body">
+                <div class="login-tabs" style="display: flex; gap: 10px; margin-bottom: 25px; background: #f5f5f5; padding: 5px; border-radius: 50px;">
+                    <button class="btn btn-primary btn-block tab-btn active" id="tab-user" style="margin:0; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">User</button>
+                    <button class="btn btn-transparent btn-block tab-btn" id="tab-admin" style="margin:0; color: #555;">Admin</button>
+                </div>
+                <form id="loginFormPopup">
+                    <div class="form-group mb-3">
+                        <input type="text" id="login-identifier" placeholder="Email / Phone / Username" required style="padding: 15px; border-radius: 12px; border: 1px solid #eee; background: #fafafa; font-size:1rem;">
+                    </div>
+                    <div class="form-group mb-4">
+                        <input type="password" id="login-password" placeholder="Password" required style="padding: 15px; border-radius: 12px; border: 1px solid #eee; background: #fafafa; font-size:1rem;">
+                    </div>
+                    <button type="submit" class="btn btn-dark btn-block shadow-sm" style="background:#222; color:#fff; padding:15px; font-size:1.1rem; border-radius:12px;">Login <i class="fa-solid fa-arrow-right ml-2 text-gold"></i></button>
+                </form>
             </div>
         </div>
     </div>
