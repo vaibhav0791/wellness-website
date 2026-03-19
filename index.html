@@ -34,6 +34,7 @@
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#transformations">Results</a></li>
                     <li><a href="#why-us">Why Us</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#gallery">Gallery</a></li>
@@ -43,7 +44,8 @@
                 <a href="https://wa.me/1234567890" target="_blank" class="btn btn-whatsapp-header" aria-label="WhatsApp">
                     <i class="fa-brands fa-whatsapp"></i>
                 </a>
-                <button class="btn btn-secondary open-login-btn" style="padding: 10px 24px;">Login</button>
+                <button class="btn btn-outline-dark open-signup-btn">Sign Up</button>
+                <button class="btn btn-secondary open-login-btn">Login</button>
                 <a href="#contact" class="btn btn-black">Get in Touch</a>
             </div>
             
@@ -59,9 +61,11 @@
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#transformations">Results</a></li>
                 <li><a href="#why-us">Why Us</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#gallery">Gallery</a></li>
+                <li><button class="btn btn-outline-dark btn-block mt-4 open-signup-btn" style="border: 1px solid var(--color-dark); color: var(--color-dark); padding: 14px; border-radius: 50px; background:transparent;">Sign Up</button></li>
                 <li><button class="btn btn-secondary btn-block mt-2 open-login-btn">Login</button></li>
                 <li><a href="#contact" class="btn btn-black mt-2">Get in Touch</a></li>
             </ul>
@@ -69,7 +73,12 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero-section hero-fullwidth">
+    <section id="hero" class="hero-section hero-slideshow hero-fullwidth">
+        <div class="hero-slide active" style="background-image: url('assets/hero_bg1.png');"></div>
+        <div class="hero-slide" style="background-image: url('assets/hero_bg2.png');"></div>
+        <div class="hero-slide" style="background-image: url('assets/hero_bg3.png');"></div>
+        <div class="hero-slide" style="background-image: url('assets/hero_bg4.png');"></div>
+        
         <div class="hero-overlay"></div>
         <div class="container hero-container-center">
             <div class="hero-content text-center fade-in-up">
@@ -82,6 +91,14 @@
                     <a href="https://wa.me/1234567890" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                 </div>
             </div>
+        </div>
+        
+        <!-- Slideshow Dots -->
+        <div class="hero-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
         </div>
     </section>
 
@@ -162,13 +179,25 @@
         <div class="container text-center reveal-up">
             <span class="section-subtitle">Real Results</span>
             <h2>Real Transformations</h2>
-            <div class="transformations-grid mt-4">
-                <div class="transformation-card">
-                    <img src="assets/transformation1.png" alt="Before and After Transformation 1">
+            <div class="carousel-container mt-4" style="position: relative; max-width: 1000px; margin: 0 auto; padding: 0 40px;">
+                <button class="carousel-btn prev-btn" id="transform-prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="carousel-track-wrapper" style="overflow: hidden; border-radius: 20px; padding: 10px 0;">
+                    <div class="carousel-track" id="transform-track" style="display: flex; gap: 20px; transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);">
+                        <div class="carousel-card" style="flex: 0 0 calc(50% - 10px); min-width: 0; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-sm); transition: 0.3s;">
+                            <img src="assets/transformation1.png" alt="Transformation 1" style="width:100%; height:100%; object-fit:cover; display:block;">
+                        </div>
+                        <div class="carousel-card" style="flex: 0 0 calc(50% - 10px); min-width: 0; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-sm); transition: 0.3s;">
+                            <img src="assets/transformation2.png" alt="Transformation 2" style="width:100%; height:100%; object-fit:cover; display:block;">
+                        </div>
+                        <div class="carousel-card" style="flex: 0 0 calc(50% - 10px); min-width: 0; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-sm); transition: 0.3s;">
+                            <img src="assets/transformation3.png" alt="Transformation 3" style="width:100%; height:100%; object-fit:cover; display:block;">
+                        </div>
+                        <div class="carousel-card" style="flex: 0 0 calc(50% - 10px); min-width: 0; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-sm); transition: 0.3s;">
+                            <img src="assets/transformation4.png" alt="Transformation 4" style="width:100%; height:100%; object-fit:cover; display:block;">
+                        </div>
+                    </div>
                 </div>
-                <div class="transformation-card">
-                    <img src="assets/transformation2.png" alt="Before and After Transformation 2">
-                </div>
+                <button class="carousel-btn next-btn" id="transform-next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
@@ -394,6 +423,29 @@
         </div>
     </section>
 
+    <!-- What Our Community Shares -->
+    <section id="feedback" class="feedback-section section-padding bg-beige">
+        <div class="container text-center reveal-up">
+            <span class="section-subtitle">Social Proof</span>
+            <h2>What Our Community Shares</h2>
+            
+            <div class="feedback-grid mt-4" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px;">
+                <div class="feedback-card" style="box-shadow: var(--shadow-md); border-radius: 20px; overflow: hidden; background: #fff; padding: 15px; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='var(--shadow-lg)';" onmouseout="this.style.transform='none'; this.style.boxShadow='var(--shadow-md)';">
+                    <img src="assets/chat1.png" alt="Chat Feedback 1" style="border-radius: 12px; width:100%;">
+                </div>
+                <div class="feedback-card" style="box-shadow: var(--shadow-md); border-radius: 20px; overflow: hidden; background: #fff; padding: 15px; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='var(--shadow-lg)';" onmouseout="this.style.transform='none'; this.style.boxShadow='var(--shadow-md)';">
+                    <img src="assets/chat2.png" alt="Chat Feedback 2" style="border-radius: 12px; width:100%;">
+                </div>
+                <div class="feedback-card" style="box-shadow: var(--shadow-md); border-radius: 20px; overflow: hidden; background: #fff; padding: 15px; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='var(--shadow-lg)';" onmouseout="this.style.transform='none'; this.style.boxShadow='var(--shadow-md)';">
+                    <img src="assets/chat3.png" alt="Chat Feedback 3" style="border-radius: 12px; width:100%;">
+                </div>
+                <div class="feedback-card" style="box-shadow: var(--shadow-md); border-radius: 20px; overflow: hidden; background: #fff; padding: 15px; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='var(--shadow-lg)';" onmouseout="this.style.transform='none'; this.style.boxShadow='var(--shadow-md)';">
+                    <img src="assets/chat4.png" alt="Chat Feedback 4" style="border-radius: 12px; width:100%;">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Call to Action / Contact -->
     <section id="contact" class="cta-section section-padding">
         <div class="container text-center reveal-up">
@@ -500,6 +552,30 @@
                     </div>
                     <button type="submit" class="btn btn-dark btn-block shadow-sm" style="background:#222; color:#fff; padding:15px; font-size:1.1rem; border-radius:12px;">Login <i class="fa-solid fa-arrow-right ml-2 text-gold"></i></button>
                 </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signup-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 400px; padding: 10px; border-radius: 24px;">
+            <button class="modal-close" aria-label="Close modal" id="signup-close">&times;</button>
+            <div class="modal-header text-center" style="border-bottom: none; padding-bottom: 0;">
+                <h2 style="font-size: 1.8rem; margin-bottom: 5px;">Join Us</h2>
+                <p class="text-text-light" style="font-size: 0.9rem;">Create your account</p>
+            </div>
+            <div class="modal-body" style="padding: 20px 30px 40px;">
+                <button class="btn btn-block mb-3" style="background:#fff; border:1px solid #ddd; color:#333; justify-content:center; gap:10px; padding:15px; font-size:1rem; border-radius:12px; transition:0.3s;" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">
+                    <i class="fa-brands fa-google text-primary" style="font-size:1.2rem; color:#4285F4;"></i> Continue with Google
+                </button>
+                <button class="btn btn-block mb-3" style="background:#fff; border:1px solid #ddd; color:#333; justify-content:center; gap:10px; padding:15px; font-size:1rem; border-radius:12px; transition:0.3s;" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">
+                    <i class="fa-solid fa-phone text-primary" style="font-size:1.2rem;"></i> Continue with Phone Number
+                </button>
+                <div class="text-center" style="margin: 15px 0; color:#aaa; font-size:0.9rem;">or</div>
+                <button class="btn btn-dark btn-block shadow-sm" style="background:#222; color:#fff; padding:15px; font-size:1rem; border-radius:12px; justify-content:center; gap:10px;">
+                    <i class="fa-regular fa-envelope" style="font-size:1.2rem;"></i> Continue with Email
+                </button>
+                <p class="text-center mt-4 mb-0" style="font-size:0.85rem; color:#888;">By joining, you agree to our Terms and Privacy Policy.</p>
             </div>
         </div>
     </div>

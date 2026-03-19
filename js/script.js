@@ -29,6 +29,105 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* HERO SLIDESHOW */
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    const heroDots = document.querySelectorAll('.hero-dots .dot');
+    let currentHeroSlide = 0;
+    let heroSlideInterval;
+
+    function showHeroSlide(index) {
+        if(heroSlides.length === 0) return;
+        heroSlides.forEach(s => s.classList.remove('active'));
+        heroDots.forEach(d => d.classList.remove('active'));
+        currentHeroSlide = index;
+        if(currentHeroSlide >= heroSlides.length) currentHeroSlide = 0;
+        if(currentHeroSlide < 0) currentHeroSlide = heroSlides.length - 1;
+        
+        heroSlides[currentHeroSlide].classList.add('active');
+        if(heroDots[currentHeroSlide]) heroDots[currentHeroSlide].classList.add('active');
+    }
+
+    function startHeroSlideshow() {
+        if(heroSlides.length === 0) return;
+        heroSlideInterval = setInterval(() => {
+            showHeroSlide(currentHeroSlide + 1);
+        }, 5000); // 5 seconds interval
+    }
+
+    if(heroSlides.length > 0) {
+        startHeroSlideshow();
+        heroDots.forEach((dot) => {
+            dot.addEventListener('click', (e) => {
+                clearInterval(heroSlideInterval);
+                const idx = parseInt(e.target.getAttribute('data-slide'));
+                showHeroSlide(idx);
+                setTimeout(() => {
+                    clearInterval(heroSlideInterval);
+                    startHeroSlideshow();
+                }, 8000);
+            });
+        });
+    }
+
+    /* SIGN UP MODAL LOGIC */
+    const signupModal = document.getElementById('signup-modal');
+    const signupClose = document.getElementById('signup-close');
+    const openSignupBtns = document.querySelectorAll('.open-signup-btn');
+
+    if(signupModal) {
+        openSignupBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                signupModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        signupClose.addEventListener('click', () => {
+            signupModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        signupModal.addEventListener('click', (e) => {
+            if(e.target === signupModal) {
+                signupModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+
+    /* RESULTS CAROUSEL LOGIC */
+    const track = document.getElementById('transform-track');
+    const prevBtn = document.getElementById('transform-prev');
+    const nextBtn = document.getElementById('transform-next');
+    
+    if(track && prevBtn && nextBtn) {
+        let currentIndex = 0;
+        const totalCards = document.querySelectorAll('.carousel-card').length;
+        
+        const updateCarousel = () => {
+            if(currentIndex > totalCards - 2) currentIndex = totalCards - 2;
+            if(currentIndex < 0) currentIndex = 0;
+            
+            // translate X based on card width (50% gap compensated)
+            track.style.transform = `translateX(calc(-${currentIndex * 50}% - ${currentIndex * 10}px))`;
+        };
+
+        nextBtn.addEventListener('click', () => {
+            if(currentIndex < totalCards - 2) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if(currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+    }
+
     /* LOGIN MODAL LOGIC */
     const loginModal = document.getElementById('login-modal');
     const loginClose = document.getElementById('login-close');
