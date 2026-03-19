@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga & Wellness Coaching | Guided Wellness</title>
+    <meta name="description" content="Personalized yoga programs designed to improve your physical and mental well-being.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/1234567890" class="floating-whatsapp" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Header / Nav -->
+    <header id="main-header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-text">BUSINESS NAME</span>
+            </a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why-us">Why Us</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions d-none-sm">
+                <a href="https://wa.me/1234567890" target="_blank" class="btn btn-whatsapp-header" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="#contact" class="btn btn-black">Get in Touch</a>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Nav -->
+        <div class="mobile-nav">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact" class="btn btn-black mt-2">Get in Touch</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section hero-fullwidth">
+        <div class="hero-overlay"></div>
+        <div class="container hero-container-center">
+            <div class="hero-content text-center fade-in-up">
+                <h1 class="hero-business-name">BUSINESS NAME</h1>
+                <span class="tagline">Guided Wellness for a Healthier, Balanced Life</span>
+                
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">Book a Session</a>
+                    <a href="#recorded" class="btn btn-outline text-white">View Programs</a>
+                    <a href="https://wa.me/1234567890" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (MOVED IMMEDIATELY AFTER HERO) -->
+    <section id="about" class="about-section section-padding">
+        <div class="container about-container">
+            <div class="about-image-wrapper reveal-left">
+                <img src="assets/coach.png" alt="Girl Yoga Coach" class="about-image">
+            </div>
+            <div class="about-content reveal-right">
+                <span class="section-subtitle">Meet Your Wellness Guide</span>
+                <h2>Hi, I'm Girl</h2>
+                <p>I am a passionate and experienced yoga coach dedicated to helping individuals achieve physical strength, mental clarity, and emotional balance. With years of practice and a deep understanding of holistic wellness, I specialize in prenatal yoga, therapeutic yoga, and personalized wellness programs.</p>
+                <p>My approach combines traditional yoga principles with modern techniques, ensuring safe, effective, and result-driven sessions. I believe in creating a calm, supportive environment where every individual feels comfortable and empowered in their wellness journey.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section section-padding bg-beige">
+        <div class="container">
+            <div class="section-header text-center reveal-up">
+                <span class="section-subtitle">Live Programs</span>
+                <h2>Transformative Yoga Services</h2>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card reveal-up open-modal-btn" data-modal="prenatal-class" style="transition-delay: 0.1s; cursor:pointer;">
+                    <div class="service-img-wrapper">
+                        <img src="assets/prenatal.png" alt="Prenatal Yoga" class="service-img">
+                    </div>
+                    <div class="service-content">
+                        <h3>Prenatal Yoga Classes</h3>
+                        <p class="service-price">₹1</p>
+                        <button class="btn btn-primary btn-block">Book a Spot</button>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card reveal-up open-modal-btn" data-modal="yin-yang-class" style="transition-delay: 0.2s; cursor:pointer;">
+                    <div class="service-img-wrapper">
+                        <img src="assets/yin.png" alt="Yin Yoga" class="service-img">
+                    </div>
+                    <div class="service-content">
+                        <h3>Yin & Yang Yoga Classes</h3>
+                        <p class="service-price">₹1</p>
+                        <button class="btn btn-primary btn-block">Book a Spot</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1-ON-1 Appointment -->
+    <section id="appointments" class="appointments-section section-padding">
+        <div class="container">
+            <div class="section-header text-center reveal-up">
+                <span class="section-subtitle">Personalized</span>
+                <h2>Exclusive 1-on-1 Sessions</h2>
+            </div>
+            
+            <div class="appointment-card reveal-up open-modal-btn" data-modal="personal-appointment" style="cursor:pointer;">
+                <div class="appointment-content">
+                    <div class="appointment-text">
+                        <h3>Personal Yoga Appointment</h3>
+                        <p>Receive dedicated, individualized attention tailored entirely to your physical state and mental goals. This session allows for specific corrections, deep restorative healing, and customized pace.</p>
+                        <p class="appointment-price">₹1</p>
+                    </div>
+                    <button class="btn btn-primary">Book a Spot</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recorded Content Section -->
+    <section id="recorded" class="recorded-section section-padding bg-dark text-beige">
+        <div class="container">
+            <div class="section-header text-center reveal-up">
+                <span class="section-subtitle text-gold">Learn Anywhere</span>
+                <h2 class="text-beige">Recorded Programs</h2>
+            </div>
+            
+            <div class="recorded-grid">
+                <!-- Program 1 -->
+                <div class="recorded-card reveal-up open-modal-btn" data-modal="rec-obesity" style="cursor:pointer;">
+                    <div class="recorded-img"><img src="assets/obesity.png" alt="Program"></div>
+                    <div class="recorded-content">
+                        <h4>Recording - A Scientific Approach to Obesity Management</h4>
+                        <p class="recorded-price">₹1</p>
+                        <button class="btn btn-primary btn-sm btn-block">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="recorded-card reveal-up open-modal-btn" data-modal="rec-knee" style="cursor:pointer;">
+                    <div class="recorded-img"><img src="assets/knee.png" alt="Program"></div>
+                    <div class="recorded-content">
+                        <h4>Recording - Therapeutic Yoga for Knee Pain Workshop</h4>
+                        <p class="recorded-price">₹1</p>
+                        <button class="btn btn-primary btn-sm btn-block">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="recorded-card reveal-up open-modal-btn" data-modal="rec-baby" style="cursor:pointer;">
+                    <div class="recorded-img"><img src="assets/prenatal.png" alt="Program"></div>
+                    <div class="recorded-content">
+                        <h4>Recording - The Complete Guide to Baby Position Workshop</h4>
+                        <p class="recorded-price">₹1</p>
+                        <button class="btn btn-primary btn-sm btn-block">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Program 4 -->
+                <div class="recorded-card reveal-up open-modal-btn" data-modal="rec-sciatica" style="cursor:pointer;">
+                    <div class="recorded-img"><img src="assets/sciatica.png" alt="Program"></div>
+                    <div class="recorded-content">
+                        <h4>Recording - Healing Sciatica Through Yoga</h4>
+                        <p class="recorded-price">₹1</p>
+                        <button class="btn btn-primary btn-sm btn-block">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Program 5 -->
+                <div class="recorded-card reveal-up open-modal-btn" data-modal="rec-menstrual" style="cursor:pointer;">
+                    <div class="recorded-img"><img src="assets/menstrual.png" alt="Program"></div>
+                    <div class="recorded-content">
+                        <h4>Recording - Yoga for Menstrual Phases & Holistic Healing</h4>
+                        <p class="recorded-price">₹1</p>
+                        <button class="btn btn-primary btn-sm btn-block">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Program 6 -->
+                <div class="recorded-card reveal-up open-modal-btn" data-modal="rec-food-diabetes" style="cursor:pointer;">
+                    <div class="recorded-img"><img src="assets/diabetes.png" alt="Program"></div>
+                    <div class="recorded-content">
+                        <h4>Recording - Food as Medicine: Reversing Diabetes</h4>
+                        <p class="recorded-price">₹1</p>
+                        <button class="btn btn-primary btn-sm btn-block">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Program 7 -->
+                <div class="recorded-card reveal-up open-modal-btn" data-modal="rec-yin" style="cursor:pointer;">
+                    <div class="recorded-img"><img src="assets/yin.png" alt="Program"></div>
+                    <div class="recorded-content">
+                        <h4>Recording - The Magic of Yin Yoga! Workshop</h4>
+                        <p class="recorded-price">₹1</p>
+                        <button class="btn btn-primary btn-sm btn-block">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Program 8 -->
+                <div class="recorded-card reveal-up open-modal-btn" data-modal="rec-spine" style="cursor:pointer;">
+                    <div class="recorded-img"><img src="assets/gallery1.png" alt="Program"></div>
+                    <div class="recorded-content">
+                        <h4>Recording - Yoga for Spinal Disorders Workshop</h4>
+                        <p class="recorded-price">₹1</p>
+                        <button class="btn btn-primary btn-sm btn-block">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Program 9 -->
+                <div class="recorded-card reveal-up open-modal-btn" data-modal="rec-resistance" style="cursor:pointer;">
+                    <div class="recorded-img"><img src="assets/gallery2.png" alt="Program"></div>
+                    <div class="recorded-content">
+                        <h4>Recording - Resistance Band Yoga Fusion Workshop</h4>
+                        <p class="recorded-price">₹1</p>
+                        <button class="btn btn-primary btn-sm btn-block">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Program 10 -->
+                <div class="recorded-card reveal-up open-modal-btn" data-modal="rec-iron" style="cursor:pointer;">
+                    <div class="recorded-img"><img src="assets/gallery3.png" alt="Program"></div>
+                    <div class="recorded-content">
+                        <h4>Recording - Strength Meets Stillness: Iron Yoga Fusion</h4>
+                        <p class="recorded-price">₹1</p>
+                        <button class="btn btn-primary btn-sm btn-block">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Program 11 -->
+                <div class="recorded-card reveal-up open-modal-btn" data-modal="rec-diabetes-manage" style="cursor:pointer;">
+                    <div class="recorded-img"><img src="assets/diabetes.png" alt="Program"></div>
+                    <div class="recorded-content">
+                        <h4>Recording - Scientific Approach to Diabetes Management</h4>
+                        <p class="recorded-price">₹1</p>
+                        <button class="btn btn-primary btn-sm btn-block">Buy Now</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section section-padding">
+        <div class="container text-center reveal-up">
+            <span class="section-subtitle">Visuals</span>
+            <h2>Gallery</h2>
+            <div class="gallery-grid mt-4" id="gallery-grid-main">
+                <!-- 8 Initial Images -->
+                <div class="gallery-item"><img src="assets/gallery1.png" alt="Gallery"></div>
+                <div class="gallery-item"><img src="assets/gallery2.png" alt="Gallery"></div>
+                <div class="gallery-item"><img src="assets/gallery3.png" alt="Gallery"></div>
+                <div class="gallery-item"><img src="assets/hero.png" alt="Gallery"></div>
+                <div class="gallery-item"><img src="assets/prenatal.png" alt="Gallery"></div>
+                <div class="gallery-item"><img src="assets/yin.png" alt="Gallery"></div>
+                <div class="gallery-item"><img src="assets/menstrual.png" alt="Gallery"></div>
+                <div class="gallery-item"><img src="assets/sciatica.png" alt="Gallery"></div>
+
+                <!-- 8 Hidden / Expandable Images -->
+                <div class="gallery-item d-none gallery-expandable"><img src="assets/diabetes.png" alt="Gallery"></div>
+                <div class="gallery-item d-none gallery-expandable"><img src="assets/knee.png" alt="Gallery"></div>
+                <div class="gallery-item d-none gallery-expandable"><img src="assets/obesity.png" alt="Gallery"></div>
+                <div class="gallery-item d-none gallery-expandable"><img src="assets/gallery1.png" alt="Gallery"></div>
+                <div class="gallery-item d-none gallery-expandable"><img src="assets/gallery2.png" alt="Gallery"></div>
+                <div class="gallery-item d-none gallery-expandable"><img src="assets/gallery3.png" alt="Gallery"></div>
+                <div class="gallery-item d-none gallery-expandable"><img src="assets/hero.png" alt="Gallery"></div>
+                <div class="gallery-item d-none gallery-expandable"><img src="assets/coach.png" alt="Gallery"></div>
+            </div>
+            
+            <button id="seeMoreGalleryBtn" class="btn btn-secondary mt-4">See More</button>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="why-us-section section-padding bg-beige">
+        <div class="container text-center reveal-up">
+            <span class="section-subtitle">Our Promise</span>
+            <h2>Why Choose Us</h2>
+            
+            <div class="features-grid mt-4">
+                <div class="feature-box">
+                    <i class="fa-solid fa-medal text-gold"></i>
+                    <h4>Certified Expertise</h4>
+                    <p>Guidance from highly trained and certified professionals.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fa-solid fa-heart text-gold"></i>
+                    <h4>Personalized Care</h4>
+                    <p>Programs tailored to your unique body and needs.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fa-solid fa-shield-halved text-gold"></i>
+                    <h4>Safe & Effective Methods</h4>
+                    <p>Focus on perfect alignment and injury prevention.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fa-solid fa-users text-gold"></i>
+                    <h4>Strong Community Support</h4>
+                    <p>A calm space free from judgment and expectations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials-section section-padding bg-dark text-beige">
+        <div class="container text-center reveal-up">
+            <span class="section-subtitle text-gold">Real Stories</span>
+            <h2 class="text-white">Words from Our Community</h2>
+            
+            <div class="testimonials-slider mt-4">
+                <div class="testimonial-card-dark">
+                    <i class="fa-solid fa-quote-left text-gold"></i>
+                    <p>"The prenatal yoga sessions completely changed my pregnancy journey. The back pain disappeared, and I felt so supported mentally and physically."</p>
+                    <strong>Priya Sharma</strong>
+                </div>
+                <div class="testimonial-card-dark">
+                    <i class="fa-solid fa-quote-left text-gold"></i>
+                    <p>"I came seeking stress relief, but I found emotional balance and strength. The therapeutic approach is nothing short of life-changing."</p>
+                    <strong>Neha Verma</strong>
+                </div>
+                <div class="testimonial-card-dark">
+                    <i class="fa-solid fa-quote-left text-gold"></i>
+                    <p>"Her 1-on-1 sessions are deeply personalized. I've never felt so strong, calm, and aligned before."</p>
+                    <strong>Anjali Singh</strong>
+                </div>
+                <div class="testimonial-card-dark mt-4">
+                    <i class="fa-solid fa-quote-left text-gold"></i>
+                    <p>"Finding this community was the best decision for my postpartum recovery. Highly recommend the holistic approach."</p>
+                    <strong>Kavita Gupta</strong>
+                </div>
+                <div class="testimonial-card-dark mt-4">
+                    <i class="fa-solid fa-quote-left text-gold"></i>
+                    <p>"The sciatica workshop completely relieved my chronic pain. I feel more agile and empowered securely from my own home."</p>
+                    <strong>Ritu Mishra</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Contact -->
+    <section id="contact" class="cta-section section-padding">
+        <div class="container text-center reveal-up">
+            <h2>Start Your Wellness Journey Today</h2>
+            <p class="mt-2 mb-4">Take the first step towards a healthier, happier you.</p>
+            
+            <div class="cta-buttons mb-5">
+                <a href="#services" class="btn btn-primary">Book Now</a>
+                <a href="https://wa.me/1234567890" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info text-left">
+                    <h3>Get in Touch</h3>
+                    <ul class="contact-list">
+                        <li><i class="fa-solid fa-location-dot"></i> Demo Location, Demo City</li>
+                        <li><i class="fa-solid fa-phone"></i> +1 234 567 890</li>
+                        <li><i class="fa-solid fa-envelope"></i> hello@wellness.com</li>
+                    </ul>
+                </div>
+                
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-black btn-block">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer bg-dark text-beige">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo text-beige">
+                    <span class="logo-text text-white">BUSINESS NAME</span>
+                </a>
+                <p class="mt-2">Guided Wellness for a Healthier, Balanced Life.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About Coach</a></li>
+                    <li><a href="#services">Our Programs</a></li>
+                    <li><a href="#testimonials">Transformations</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 BUSINESS NAME. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Global Dynamic Modal -->
+    <div id="dynamic-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <h2 id="modal-title">Program Title</h2>
+                <div class="modal-price-badge">₹1</div>
+            </div>
+            <div class="modal-body">
+                <!-- Content injected via JS -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary btn-block" onclick="alert('Proceeding to payment gateway for ₹1')">Proceed to Payment (₹1)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</body>
+</html>
